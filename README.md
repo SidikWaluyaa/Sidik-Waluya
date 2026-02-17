@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PortoSidik - Premium Portfolio CMS
 
-## Getting Started
+A state-of-the-art portfolio website with a built-in CMS, designed for Product Designers and Fullstack Developers who demand the highest level of quality, performance, and aesthetics.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15 (App Router, TypeScript)
+- **Styling**: Tailwind CSS 4 (Theme Variables, Glassmorphism)
+- **Animations**: Framer Motion
+- **Database**: Supabase (PostgreSQL with RLS)
+- **Auth**: Supabase Auth
+- **Forms**: React Hook Form + Zod
+- **Deployment**: Vercel
+
+## 📁 Key Directories
+
+- `/app`: Public pages and protected dashboard routes.
+- `/components`: Modular UI components (Atomic, Layout, Sections).
+- `/lib`: Database clients, utility functions, and Zod schemas.
+- `/services`: Abstraction layer for database operations.
+- `/hooks`: Custom React hooks for auth and data fetching.
+
+## 🛠️ Setup Instructions
+
+### 1. Supabase Preparation
+
+Run the following SQL in your Supabase SQL Editor to initialize the database:
+[View Schema](file:///C:/Users/Lenovo/.gemini/antigravity/brain/d3d9ac76-efd0-4fa8-b1b1-161bdd22b1c0/supabase_schema.sql)
+
+### 2. Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+```
+
+### 3. Installation
+
+```bash
+npm install
+```
+
+### 4. Local Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔐 Security
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Row Level Security (RLS)** is enabled for all tables.
+- **Middleware** protects all `/dashboard` routes, redirecting unauthenticated users to `/login`.
+- **Admin Access**: Ensure your user record in the `users` table has the `role` set to `'admin'`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📈 Performance
 
-## Learn More
+- **ISR (Incremental Static Regeneration)** for project and blog lists.
+- **Optimized Images** using `next/image`.
+- **Zero CLS** via skeleton loading and layout stability.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Designed for excellence. Built with **Antigravity**.
