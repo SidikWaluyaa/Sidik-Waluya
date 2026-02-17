@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ProjectCard } from "@/components/cards/project-card";
-import { Project } from "@/lib/validations";
+
 import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/utils";
 
