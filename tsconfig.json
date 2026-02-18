@@ -26,9 +26,6 @@
     "paths": {
       "@/*": [
         "./*"
-      ],
-      "@hookform/resolvers/zod": [
-        "./node_modules/@hookform/resolvers/zod/dist/index.d.ts"
       ]
     }
   },
